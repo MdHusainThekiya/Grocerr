@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocerr - One Click Away !!</title>
+    <!-- CSS file link -->
+    <style type="text/css">
+        /* IMPORTS */
+        @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Play:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&display=swap');
+
+        /* DEFAULT */
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+
+        /* Header */
+        .container{
+            width: 100%;
+            max-height: 100vh;
+            box-sizing: border-box;
+        }
+        .header{
+            background-color: rgba(151, 191, 224, 0.808);
+            display: flex;
+            justify-content: space-between;
+        }
+        .header > .name{
+            margin-left: 8%;
+        }
+        .header > .name > h1{
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+            font-weight: 150;
+            color: rgb(92, 68, 248);
+            margin: 0 0 -0.5rem 0;
+        }
+        .header > .name > h2{
+            color: black;
+            font-size: 1.25rem;
+            padding: 0 0 0 0;
+            text-align: center;
+        }
+        .header > nav{
+            flex: 1;
+            text-align: right;
+        }
+        .header > nav > ul{
+            list-style-type: none;
+            margin-right: 4%;
+            margin-top: 35px;
+        }
+        .header > nav > ul > li{
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .header > nav > ul > li > button{
+            border: none;
+            border-radius: 10px;
+        }
+        .header > nav > ul > li > button >a{
+            background-color: rgba(151, 191, 224, 0.808);
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+        }
+        .header > nav > ul > li > button > a{
+            display: flex;
+            gap: 10px;
+            padding: 5px 10px;
+            list-style-type: none;
+            text-decoration: none;
+        }
+        .header > nav > ul > li > button > a > h4{
+            font-weight: 700;
+        }
+        .header > nav > ul > li > button> a:hover{
+            background-color: rgb(248, 90, 90);
+            color: white;
+            box-shadow: none;
+        }
+        @media only screen and (max-width: 750px){
+            .header{
+                display: grid;
+                grid-template-columns: 100%;
+            }
+            .header > .name{
+                margin-left: 0%;
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+            }
+            .header > .name > h1{
+                font-family: 'Permanent Marker', cursive;
+                font-size: 4rem;
+                font-weight: 150;
+                color: rgb(92, 68, 248);
+                margin: 0 0 -0.5rem 0;
+            }
+            .header > .name > h2{
+                color: black;
+                font-size: 1.25rem;
+                padding: 0 0 0 0;
+                text-align: center;
+            }
+            .header > nav{
+                flex: 1;
+                text-align: center;
+
+            }
+            .header > nav > ul{
+                list-style-type: none;
+                margin-right: 0%;
+                margin-top: 35px;
+            }
+            .header > nav > ul > li{
+                display: inline-block;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+            .header > nav > ul > li > button{
+                border: none;
+                border-radius: 10px;
+            }
+            .header > nav > ul > li > button >a{
+                background-color: rgba(151, 191, 224, 0.808);
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+            }
+            .header > nav > ul > li > button > a{
+                display: flex;
+                gap: 10px;
+                padding: 5px 10px;
+                list-style-type: none;
+                text-decoration: none;
+            }
+            .header > nav > ul > li > button > a > h4{
+                font-weight: 700;
+            }
+            .header > nav > ul > li > button> a:hover{
+                background-color: rgb(248, 90, 90);
+                color: white;
+                box-shadow: none;
+            }
+        }
+
+        /* OFFER TEXT AND HERO AREA */
+        .offer{
+            width: 100%;
+            background-color: rgba(151, 191, 224, 0.808);
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: -100px;
+        }
+        .offer > .herotext{
+            margin: 100px 0 0 10%;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+        .herotext #live{
+            color: red;
+            font-weight: 900;
+            font-size: 3rem;
+        }
+        .herotext #upto{
+            
+            font-weight: 900;
+            font-size: 3rem;
+        }
+        .herotext #herooffer{
+            color: red;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-weight: 700;
+            font-size: 4rem;
+        }
+        .offer > .hero> img{
+            transform: translateY(4px);
+        }
+
+        @media only screen and (max-width:750px){
+            .offer{
+                width: 100%;
+                background-color: rgba(151, 191, 224, 0.808);
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                margin-bottom: -100px;
+            }
+            .offer > .herotext{
+                margin: 50px 0 0 8%;
+                font-family: 'Yanone Kaffeesatz', sans-serif;
+                font-weight: 700;
+                font-size: 1.8rem;
+            }
+            .herotext #live{
+                color: red;
+                font-weight: 900;
+                font-size: 2.53rem;
+            }
+            .herotext #upto{
+                font-weight: 900;
+                font-size: 2.5rem;
+            }
+            .herotext #herooffer{
+                color: red;
+                font-family: 'Yanone Kaffeesatz', sans-serif;
+                font-weight: 700;
+                font-size: 3rem;
+            }
+            .offer > .hero> img{
+                overflow: auto;
+                position:relative;
+                max-block-size: 200px;
+                margin-top: 140px;
+                margin-left: -110px;
+            }
+        }
+
+        /* SAVING PASS */
+        .savingpass > img{
+            margin-top: 100px;
+            float: left;
+            width: 100%;
+            height: 100px;
+        }
+        @media only screen and (max-width: 750px){
+            .savingpass > img{
+                height: 50px;
+            }
+        }
+
+        /* DISCLAMER AREA */
+        .disclamer{
+            clear: both;
+            margin-top: 100px;
+            background-color: rgb(214, 213, 213);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            padding: 10px 5px;
+        }
+        @media only screen and (max-width:750px){
+            .disclamer{
+                padding: 0.4rem;
+                font-size: 0.4rem;
+            }
+        }
+
+        /* TODAY'S OFFER */
+        .todaysoffercontainer{
+            width: 100%;
+            background-color: rgba(151, 191, 224, 0.808);
+            height: 500px;
+        }
+        .todaysoffercontainer > .todaysofferzone{
+            display: flex;
+            flex-basis: 80%;
+            height: 430px;
+            background: linear-gradient(to right, #ff54a2, #ff575a);
+            border-radius: 20px;
+            transform: translateY(40px);
+            margin: 0 5%;
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea{
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            flex-basis: 97%;
+            transform: translateY(70px);
+            height: 340px;
+            margin: 0px 1.5%;
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer{
+            width: 100%;
+            padding: 20px 10px;
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul{
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+            justify-content: center;
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li{
+            margin: 0 5%;
+            cursor: pointer;
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li:hover{
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div{
+            padding: 10px 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > img{
+            width: 120px;
+            height: 160px;
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > a{
+            text-decoration: none;
+            font-size: 15px;
+            color: black;
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .price{
+            display: inline-flex;
+            margin-top: -10px;
+            gap: 10%;
+            transform: translateX(-15px);
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .price > .afterdiscount{
+            font-size: 25px;
+            transform: translateY(-5px);
+
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .price > .orignalprice{
+            text-decoration: line-through;
+            text-decoration-thickness: 4px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(70, 69, 69);
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .price > .discount{
+            color: green;
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .button{
+            display: inline-flex;
+            margin-top: -15px;
+            gap: 5%;
+            transform: translateX(-4%);
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .button > a > button{
+            width: 110px;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 10px;
+            background: linear-gradient(to right, #ff54a2, #ff575a);
+            font-size: 15px;
+            font-weight: 700;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+            cursor: pointer;
+        }
+        .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .button > a > button:hover{
+            background: linear-gradient(to left, #ff54a2, #ff575a);
+            box-shadow: none;
+            color: white;
+        }
+        .specialdealtitle{
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 1.5%;
+        }
+        .specialdealtitle > .title{
+            position: relative;
+            background-color: #ff575a;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+            padding: 6px 20px;
+            border-radius: 10px;
+            margin-right: 3%;
+        }
+        .specialdealtitle > .button > button{
+            height: 35px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ff54a2;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+            cursor: pointer;
+        }
+        .specialdealtitle > .button > button:hover{
+            background-color: rgb(248, 90, 90);
+            box-shadow: none;
+        }
+        .specialdealtitle > .button > button > a{
+            display: flex;
+            width: 80px;
+            justify-content: space-between;
+            list-style-type: none;
+            text-decoration: none;
+            align-content: center;
+            padding: 4px 8px;
+            font-size: 15px;
+            color: black;
+        }
+        .specialdealtitle > .button > button > a:hover{
+            color: white;
+        }
+
+        @media only screen and (max-width:750px){
+            .todaysoffercontainer{
+                width: 100%;
+                background-color: rgba(151, 191, 224, 0.808);
+                height: 525px;
+            }
+            .todaysoffercontainer > .todaysofferzone{
+                display: flex;
+                flex-basis: 80%;
+                height: 468px;
+                background: linear-gradient(to right, #ff54a2, #ff575a);
+                border-radius: 20px;
+                transform: translateY(30px);
+                margin: 0 5%;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea{
+                display: flex;
+                border-radius: 10px;
+                width: 80%;
+                transform: translateY(60px);
+                height: 390px;
+                margin: 0px 5%;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer{
+                width: 93%;
+                border-radius: 10px;
+                padding: 13px 10px;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul{
+                list-style-type: none;
+                display: grid;
+                gap: 10px;
+                grid-template-columns: repeat(2, 100%);
+                justify-content: center;
+                transform: translateX(50%);
+                width: 50%;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li{
+                margin: 0 5%;
+                cursor: pointer;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li:hover{
+                box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+            }
+            
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div{
+                padding: 5px 5px;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+                border-radius: 10px;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > img{
+                width: 60px;
+                height: 80px;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > a{
+                text-decoration: none;
+                font-size: 10px;
+                color: black;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .price{
+                display: inline-flex;
+                margin-top: -5px;
+                gap: 5%;
+                margin-left: 20%;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .price > .afterdiscount{
+                font-size: 25px;
+                transform: translateY(-5px);
+                font-size: 14px;
+            
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .price > .orignalprice{
+                text-decoration: line-through;
+                text-decoration-thickness: 1.5px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                color: rgb(70, 69, 69);
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .price > .discount{
+                font-size: 10px;
+                color: green;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .button{
+                display: inline-flex;
+                margin-top: -15px;
+                gap: 5%;
+                transform: translateX(-4%);
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .button > a > button{
+                width: 55px;
+                border: none;
+                border-radius: 5px;
+                padding: 5px 2px;
+                background: linear-gradient(to right, #ff54a2, #ff575a);
+                font-size: 10px;
+                font-weight: 400;
+                box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+                cursor: pointer;
+            }
+            .todaysoffercontainer > .todaysofferzone > .todaysofferarea > .todaysoffer > ul > li > div > .button > a > button:hover{
+                background: linear-gradient(to left, #ff54a2, #ff575a);
+                box-shadow: none;
+                color: white;
+            }
+            .specialdealtitle{
+                position: absolute;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin: 1.5%;
+            }
+            .specialdealtitle > .title{
+                position: relative;
+                background-color: #ff575a;
+                box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+                padding: 3px 10px;
+                font-size: 13px;
+                border-radius: 10px;
+                margin-right: 7%;
+                margin-top: 10%;
+                transform: translateY(-90%);
+            }
+            .specialdealtitle > .button > button{
+                height: 23px;
+                border: none;
+                border-radius: 10px;
+                background-color: #ff54a2;
+                box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+                cursor: pointer;
+                margin-top: 12%;
+                margin-left: 10%;
+            }
+            .specialdealtitle > .button > button:hover{
+                background-color: rgb(248, 90, 90);
+                box-shadow: none;
+            }
+            .specialdealtitle > .button > button > a{
+                display: flex;
+                width: 80px;
+                justify-content: space-between;
+                list-style-type: none;
+                text-decoration: none;
+                align-content: center;
+                padding: 4px 8px;
+                font-size: 15px;
+                color: black;
+            }
+            .specialdealtitle > .button > button > a:hover{
+                color: white;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- MAINS -->
+    <div class="container">
+        
+        <!-- HEADER - NAME & NAVIGATION -->
+        <div class="header">
+            <div class="name">
+                <h1>Grocerr</h1>
+                <h2>One Click Away !!</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <button>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                                </svg>
+                                <h4>Home</h4>
+                            </a>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags-fill" viewBox="0 0 16 16">
+                                    <path d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                                    <path d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043-7.457-7.457z"/>
+                                </svg>
+                                <h4>Categories</h4>
+                            </a>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                </svg>
+                                <h4>Cart</h4>
+                            </a>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                                </svg>
+                                <h4>Accounts</h4>
+                            </a>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                                    <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+                                </svg>
+                                <h4>Contact-US</h4>
+                            </a>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- OFFER BANNER WITH HERO IMAGE -->
+        <div class="offer">
+            <div class="herotext">
+                <p>Diwali Sale is <span id="live">LIVE...</span><br><span id="upto">upto </span><span id="herooffer">50% OFF !!</span></p>
+            </div>
+            <div class="hero">
+                <img id="hero" src="https://1.bp.blogspot.com/-qNpCDcvCGMg/YT4U6qwL_GI/AAAAAAAAAYw/RALnJdL3dxQQijkh9CkuhR-fS9pgYxp0QCLcBGAsYHQ/s0/hero.png" alt="hero image">
+            </div>
+        </div>
+
+        <!-- SAVING PASS -->
+        <div class="savingpass">
+            <img src="https://rukminim1.flixcart.com/flap/1924/277/image/cd05de0ea9f49b2d.jpg?q=50" alt="savingpass.jpg">
+        </div>
+
+        <!-- DISCLAMER -->
+        <div class="disclamer">
+            <a>Don’t have time for buying groceries from the market or you are unhappy with the quality of the products that 
+                are available at the nearest grocery store? Luckily, online grocery stores are making lives simpler as you will 
+                find all the necessities in one place. You can get quality products of your choice with just a click. All you 
+                need is a smartphone and internet connection. You can choose from a variety of products, precisely monthly 
+                staples, snacks and beverages, packaged food, personal and baby care, and eggs and dairy products. You 
+                can browse through this online grocery store and get daily staples like dal, different kinds of flour, 
+                rice, oil, salt, turmeric powder, spices, pickles, and more. Apart from day-to-day needs, you can also shop for 
+                toiletries such as shower gels, soaps, shampoos, and conditioners. You can also pick personal hygiene products 
+                and baby care products online. An online grocery store could be your last-minute saviour especially on days when 
+                you are unable to shop for monthly essentials because of your busy schedule. So, save time and opt to order online.</a>
+        </div>
+
+        <!-- TODAY'S OFFER -->
+        <div class="todaysoffercontainer">
+            <div class="todaysofferzone">
+                
+                <div class="todaysofferarea">
+                    <!-- <div class="button">
+                        <button>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
+                                    <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z"/>
+                                </svg>
+                                <h4>View All</h4>
+                            </a>
+                        </button>
+                    </div> -->
+                    <div class="todaysoffer">
+                        <ul>
+                            <!-- MADHUR Pure and Hygienic Sugar -->
+                            <li>
+                                <div>
+                                    <img src="https://rukminim1.flixcart.com/image/280/280/kd94uq80/sugar/y/g/c/1-pure-and-hygenic-sugar-pouch-refined-sugar-madhur-crystal-original-imafu76x45yhsyga.jpeg?q=70" alt="Madhurshugar.jpg">
+                                    <a href="">MADHUR Pure and Hygienic Sugar</a>
+                                    <div class="price">
+                                        <h3 class="afterdiscount">₹1.00</h3>
+                                        <h3 class="orignalprice">₹45.0</h3>
+                                        <h3 class="discount">97.78%</h3>
+                                    </div>
+                                    <div class="button">
+                                        <a href="">
+                                            <button>
+                                                1 Kg
+                                            </button>
+                                        </a>
+                                        <a href="">
+                                            <button>
+                                                Add to Cart
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Tata Sampann Chana Dal (Split) -->
+                            <li>
+                                <div>
+                                    <img src="https://rukminim1.flixcart.com/image/280/280/knknc7k0/pulses/8/i/v/chana-dal-chana-dal-tata-sampann-original-imag27vftqxedagf.jpeg?q=70" alt="TataSampannChanaDal.jpg">
+                                    <a href="">Tata Sampann Chana Dal (Split)</a>
+                                    <div class="price">
+                                        <h3 class="afterdiscount">₹93.75</h3>
+                                        <h3 class="orignalprice">₹125</h3>
+                                        <h3 class="discount">25.00%</h3>
+                                    </div>
+                                    <div class="button">
+                                        <a href="">
+                                            <button>
+                                                1 Kg
+                                            </button>
+                                        </a>
+                                        <a href="">
+                                            <button>
+                                                Add to Cart
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- AASHIRVAAD Select Sharbati Whole Wheat Atta -->
+                            <li>
+                                <div>
+                                    <img src="https://rukminim1.flixcart.com/image/280/280/k3erngw0/flour/c/h/g/5-atta-select-whole-wheat-flour-aashirvaad-original-imafmgdvfhhs7k7y.jpeg?q=70" alt="AASHIRVAADSuperiorMPAtta.jpg">
+                                    <a href="">AASHIRVAAD Select Sharbati Atta</a>
+                                    <div class="price">
+                                        <h3 class="afterdiscount">₹315</h3>
+                                        <h3 class="orignalprice">₹450</h3>
+                                        <h3 class="discount">30.00%</h3>
+                                    </div>
+                                    <div class="button">
+                                        <a href="">
+                                            <button>
+                                                5 Kg
+                                            </button>
+                                        </a>
+                                        <a href="">
+                                            <button>
+                                                Add to Cart
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- INDIA GATE Regular Choice Basmati Rice -->
+                            <li>
+                                <div>
+                                    <img src="https://rukminim1.flixcart.com/image/280/280/klscivk0/rice/r/m/p/white-regular-choice-basmati-rice-vacuum-pack-india-gate-original-imagytzcjrdgk3je.jpeg?q=70" alt="INDIAGATERegularChoiceBasmatiRice.jpg">
+                                    <a href="">INDIA GATE Basmati Rice</a>
+                                    <div class="price">
+                                        <h3 class="afterdiscount">₹299</h3>
+                                        <h3 class="orignalprice">₹400</h3>
+                                        <h3 class="discount">25.25%</h3>
+                                    </div>
+                                    <div class="button">
+                                        <a href="">
+                                            <button>
+                                                1 Kg
+                                            </button>
+                                        </a>
+                                        <a href="">
+                                            <button>
+                                                Add to Cart
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="specialdealtitle">
+                    <div class="button">
+                        <button>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
+                                    <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z"/>
+                                </svg>
+                                <h4>View All</h4>
+                            </a>
+                        </button>
+                    </div>
+                    <div class="title">
+                        <h3>Today's Special Deals !!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
